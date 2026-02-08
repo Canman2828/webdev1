@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <h1 id="display"></h1>
+
+  <nav>
+    <a href="video.html">My Video</a> |
+    <a href="youtube.html">YouTube Video & Audio</a>
+  </nav>
+
+  <div>
+    <form method="get" action="index.html">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <form>
+      <label for="location">Write about</label>
+      <select id="location" name="location">
+        <option value="new-york">Columbia</option>
+        <option value="los-angeles">Kansas City</option>
+        <option value="chicago">STL</option>
+        <option value="houston">Chicago</option>
+        <option value="phoenix">Atlanta</option>
+        <option value="philadelphia">Miami</option>
+        <option value="san-antonio">Dallas</option>
+        <option value="san-diego">Denver</option>
+        <option value="dallas">Houston</option>
+        <option value="san-jose">San Juan</option>
+      </select>
+
+      <div>
+        <textarea id="txtarea" name="txtarea" rows="4" cols="50"></textarea>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
