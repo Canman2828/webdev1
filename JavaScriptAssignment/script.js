@@ -26,6 +26,7 @@ function resetRound() {
 
 fruitButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    // Each button has a id that gets compared to the current image id.
     const selectedButtonId = Number(button.dataset.fruitId);
     fruitName.textContent = fruits[currentImageId].name;
 
