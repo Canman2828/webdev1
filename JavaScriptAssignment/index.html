@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fruit Game by Canady Mitchem</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game">
+    <h1>Fruit Game</h1>
+
+    <img
+      id="fruit-image"
+      src="fruit/apple-g56a141b7e_640.png"
+      alt="Fruit image for guessing game"
+    >
+
+    <p id="fruit-name" class="feedback"></p>
+    <p id="result-message" class="feedback"></p>
+
+    <div class="fruit-buttons">
+      <button type="button" data-fruit-id="1">Apple</button>
+      <button type="button" data-fruit-id="3">Pear</button>
+      <button type="button" data-fruit-id="2">Orange</button>
+      <button type="button" data-fruit-id="4">Pineapple</button>
+    </div>
+  </main>
+
+  <button id="play-again" type="button">Play Again</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

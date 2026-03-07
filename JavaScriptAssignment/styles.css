@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+.game {
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 80px;
+}
+
+#fruit_image {
+  width: 50%;
+  height: 200px;
+  padding: 20px;
+  object-fit: contain;
+}
+
+.feedback {
+  min-height: 24px;
+  margin: 8px 0;
+  font-family: Arial;
+  font-size: 1.2rem;
+}
+
+.fruit_buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.fruit_buttons button {
+  width: 200px;
+  height: 50px;
+  font-size: medium;
+  cursor: pointer;
+}
+
+#play_again {
+  position: fixed;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 30px;
+  cursor: pointer;
+}
