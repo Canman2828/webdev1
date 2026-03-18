@@ -6,6 +6,7 @@ const newGameButton = document.getElementById("new_game");
 const xScoreText = document.getElementById("x_score");
 const oScoreText = document.getElementById("o_score");
 const drawScoreText = document.getElementById("draw_score");
+const body = document.body;
 
 const winningCombinations = [
   [0, 1, 2],
@@ -45,6 +46,10 @@ function highlightWinningCells(combination) {
   });
 }
 
+function setPageBackground(color) {
+  body.style.backgroundColor = color;
+}
+
 function checkWinner() {
   for (const combination of winningCombinations) {
     const [first, second, third] = combination;
@@ -57,6 +62,7 @@ function checkWinner() {
       gameActive = false;
       scores[board[first]] += 1;
       highlightWinningCells(combination);
+      setPageBackground("#90ee90");
       resultMessage.textContent = `Player ${board[first]} wins!`;
       turnMessage.textContent = "Round complete";
       updateScores();
@@ -67,6 +73,7 @@ function checkWinner() {
   if (!board.includes("")) {
     gameActive = false;
     scores.draw += 1;
+    setPageBackground("#ffd700");
     resultMessage.textContent = "It's a draw!";
     turnMessage.textContent = "Round complete";
     updateScores();
@@ -103,6 +110,7 @@ function resetBoard() {
   gameActive = true;
   resultMessage.textContent = "";
   turnMessage.textContent = "Player X's turn";
+  setPageBackground("#f4f4f4");
 
   cells.forEach((cell) => {
     cell.textContent = "";
