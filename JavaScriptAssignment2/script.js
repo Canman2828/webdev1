@@ -6,6 +6,9 @@ const newGameButton = document.getElementById("new_game");
 const xScoreText = document.getElementById("x_score");
 const oScoreText = document.getElementById("o_score");
 const drawScoreText = document.getElementById("draw_score");
+const playerXNameInput = document.getElementById("player_x_name");
+const playerONameInput = document.getElementById("player_o_name");
+const startGameButton = document.getElementById("start_game");
 const body = document.body;
 
 const winningCombinations = [
@@ -27,10 +30,18 @@ let scores = {
   O: 0,
   draw: 0
 };
+let playerNames = {
+  X: "Player X",
+  O: "Player O"
+};
+
+function getPlayerName(player) {
+  return playerNames[player];
+}
 
 function updateTurnMessage() {
   if (gameActive) {
-    turnMessage.textContent = `Player ${currentPlayer}'s turn`;
+    turnMessage.textContent = `${getPlayerName(currentPlayer)}'s turn`;
   }
 }
 
@@ -63,8 +74,8 @@ function checkWinner() {
       scores[board[first]] += 1;
       highlightWinningCells(combination);
       setPageBackground("#90ee90");
-      resultMessage.textContent = `Player ${board[first]} wins!`;
-      turnMessage.textContent = "Round complete";
+      resultMessage.textContent = `${getPlayerName(board[first])} wins!`;
+      turnMessage.textContent = "Round done!";
       updateScores();
       return true;
     }
@@ -72,10 +83,10 @@ function checkWinner() {
 
   if (!board.includes("")) {
     gameActive = false;
-    scores.draw += 1;
+    scores.Tie += 1;
     setPageBackground("#ffd700");
-    resultMessage.textContent = "It's a draw!";
-    turnMessage.textContent = "Round complete";
+    resultMessage.textContent = "It's a tie!";
+    turnMessage.textContent = "Round done!";
     updateScores();
     return true;
   }
@@ -109,20 +120,28 @@ function resetBoard() {
   currentPlayer = "X";
   gameActive = true;
   resultMessage.textContent = "";
-  turnMessage.textContent = "Player X's turn";
   setPageBackground("#f4f4f4");
 
   cells.forEach((cell) => {
     cell.textContent = "";
     cell.classList.remove("played", "winner");
   });
+
+  updateTurnMessage();
+}
+
+function startGame() {
+  playerNames.X = playerXNameInput.value.trim() || "Player X";
+  playerNames.O = playerONameInput.value.trim() || "Player O";
+  resultMessage.textContent = "Game started!";
+  resetBoard();
 }
 
 function startNewGame() {
   scores = {
     X: 0,
     O: 0,
-    draw: 0
+    Tie: 0
   };
 
   updateScores();
@@ -135,6 +154,7 @@ cells.forEach((cell) => {
 
 resetBoardButton.addEventListener("click", resetBoard);
 newGameButton.addEventListener("click", startNewGame);
+startGameButton.addEventListener("click", startGame);
 
 updateScores();
 resetBoard();

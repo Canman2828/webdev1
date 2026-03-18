@@ -3,12 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tic-Tac-Toe by Canady Mitchem</title>
+  <title>Tic-Tac-Toe by Canady</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="game">
     <h1>Tic-Tac-Toe</h1>
+    <div class="player_form">
+      <label for="player_x_name">Player X Name:</label>
+      <input id="player_x_name" type="text" maxlength="20">
+
+      <label for="player_o_name">Player O Name:</label>
+      <input id="player_o_name" type="text" maxlength="20">
+
+      <button id="start_game" type="button">Start Game</button>
+    </div>
+
     <p class="instructions">Switch turns placing X and O. Get three in a row to win.</p>
 
     <section class="status_panel">
@@ -19,10 +29,11 @@
     <section class="scoreboard" aria-label="Scoreboard">
       <p>X Wins: <span id="x_score">0</span></p>
       <p>O Wins: <span id="o_score">0</span></p>
-      <p>Draws: <span id="draw_score">0</span></p>
+      <p>Tie: <span id="draw_score">0</span></p>
     </section>
 
     <section class="board" aria-label="Tic-Tac-Toe board">
+
       <button class="cell" type="button" data-cell-index="0" aria-label="Cell 1"></button>
       <button class="cell" type="button" data-cell-index="1" aria-label="Cell 2"></button>
       <button class="cell" type="button" data-cell-index="2" aria-label="Cell 3"></button>
@@ -32,6 +43,7 @@
       <button class="cell" type="button" data-cell-index="6" aria-label="Cell 7"></button>
       <button class="cell" type="button" data-cell-index="7" aria-label="Cell 8"></button>
       <button class="cell" type="button" data-cell-index="8" aria-label="Cell 9"></button>
+
     </section>
 
     <div class="button_row">
