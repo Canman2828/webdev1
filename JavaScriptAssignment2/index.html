@@ -1,24 +1,45 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>
-            
-        </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="" async defer></script>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe by Canady Mitchem</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game">
+    <h1>Tic-Tac-Toe</h1>
+    <p class="instructions">Take turns placing X and O. Get three in a row to win.</p>
+
+    <section class="status_panel">
+      <p id="turn_message" class="message">Player X's turn</p>
+      <p id="result_message" class="message"></p>
+    </section>
+
+    <section class="scoreboard" aria-label="Scoreboard">
+      <p>X Wins: <span id="x_score">0</span></p>
+      <p>O Wins: <span id="o_score">0</span></p>
+      <p>Draws: <span id="draw_score">0</span></p>
+    </section>
+
+    <section class="board" aria-label="Tic-Tac-Toe board">
+      <button class="cell" type="button" data-cell-index="0" aria-label="Cell 1"></button>
+      <button class="cell" type="button" data-cell-index="1" aria-label="Cell 2"></button>
+      <button class="cell" type="button" data-cell-index="2" aria-label="Cell 3"></button>
+      <button class="cell" type="button" data-cell-index="3" aria-label="Cell 4"></button>
+      <button class="cell" type="button" data-cell-index="4" aria-label="Cell 5"></button>
+      <button class="cell" type="button" data-cell-index="5" aria-label="Cell 6"></button>
+      <button class="cell" type="button" data-cell-index="6" aria-label="Cell 7"></button>
+      <button class="cell" type="button" data-cell-index="7" aria-label="Cell 8"></button>
+      <button class="cell" type="button" data-cell-index="8" aria-label="Cell 9"></button>
+    </section>
+
+    <div class="button_row">
+      <button id="reset_board" type="button">Reset Board</button>
+      <button id="new_game" type="button">New Game</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
