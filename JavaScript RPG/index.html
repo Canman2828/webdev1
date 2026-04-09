@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDev RPG by Canady Mitchem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="game-header">
+        <h1 id="game-title">&#9876; WebDev RPG</h1>
+        <div id="header-btns">
+            <button id="btn-save" class="btn-gold">Save Game</button>
+            <button id="btn-load" class="btn-gold">Load Game</button>
+        </div>
+    </header>
+    <div id="screen-char-select" class="screen active">
+        <div id="char-select-inner">
+            <h2>Start Your Journey</h2>
+            <p class="subtitle">Enter your name and choose a class to start</p>
+            <div id="name-row">
+                <label for="player-name">Hero Name:</label>
+                <input type="text" id="player-name" maxlength="20" placeholder="Enter your name...">
+            </div>
+            <h3>Choose Your Class</h3>
+            <div id="class-cards">
+            </div>
+        </div>
+    </div>
+    <div id="screen-world" class="screen hidden">
+        <aside id="stats-panel">
+            <div id="player-portrait-wrap">
+                <img id="stats-portrait" src="" alt="Character">
+            </div>
+            <h3 id="stats-name">—</h3>
+            <div class="stat-line"><span class="stat-lbl">Class</span><span id="stats-class">—</span></div>
+            <div class="stat-line"><span class="stat-lbl">Level</span><span id="stats-level">—</span></div>
+            <div class="stat-line"><span class="stat-lbl">HP</span><span id="stats-hp">—</span></div>
+            <div class="stat-line"><span class="stat-lbl">Attack</span><span id="stats-attack">—</span></div>
+            <div class="stat-line"><span class="stat-lbl">Defense</span><span id="stats-defense">—</span></div>
+            <div class="stat-line"><span class="stat-lbl">Gold</span><span id="stats-gold">—</span></div>
+            <div class="stat-line"><span class="stat-lbl">XP</span><span id="stats-xp">—</span></div>
+            <hr class="gold-hr">
+            <p class="inv-hdr">Weapon</p>
+            <p id="stats-weapon" class="inv-val">None</p>
+            <p class="inv-hdr">Armor</p>
+            <p id="stats-armor" class="inv-val">None</p>
+            <p class="inv-hdr">Potions</p>
+            <p id="stats-potions" class="inv-val">0</p>
+        </aside>
+
+        <main id="world-main">
+            <div id="location-img-wrap">
+                <img id="location-img" src="" alt="Location">
+            </div>
+            <div id="story-panel">
+                <p id="story-text">Your adventure awaits</p>
+            </div>
+            <div id="action-buttons">
+            </div>
+        </main>
+    </div>
+    <div id="screen-battle" class="screen hidden">
+        <aside id="battle-stats">
+            <h3 class="gold-text">Your Stats</h3>
+            <div class="stat-line"><span class="stat-lbl">HP</span><span id="b-player-hp">—</span></div>
+            <div class="stat-line"><span class="stat-lbl">ATK</span><span id="b-player-atk">—</span></div>
+            <div class="stat-line"><span class="stat-lbl">DEF</span><span id="b-player-def">—</span></div>
+            <div class="stat-line"><span class="stat-lbl">Potions</span><span id="b-potions">—</span></div>
+            <hr class="gold-hr">
+            <h3 class="gold-text">Enemy</h3>
+            <div class="stat-line"><span class="stat-lbl">HP</span><span id="b-enemy-hp">—</span></div>
+            <div class="stat-line"><span class="stat-lbl">ATK</span><span id="b-enemy-atk">—</span></div>
+            <div class="stat-line"><span class="stat-lbl">DEF</span><span id="b-enemy-def">—</span></div>
+        </aside>
+
+        <main id="battle-main">
+            <div id="battle-fighters">
+                <div class="fighter-card">
+                    <img id="player-battle-img" src="" alt="Player">
+                    <p id="player-battle-name"></p>
+                </div>
+                <div id="vs-icon">&#9876;</div>
+                <div class="fighter-card">
+                    <img id="enemy-battle-img" src="" alt="Enemy">
+                    <p id="enemy-battle-name"></p>
+                </div>
+            </div>
+
+            <canvas id="battle-canvas" width="580" height="80"></canvas>
+
+            <div id="battle-log">
+                <p id="battle-log-text">A battle begins!</p>
+            </div>
+
+            <div id="battle-actions">
+                <button id="btn-attack"  class="btn-action btn-red">&#9876; Attack</button>
+                <button id="btn-skill"   class="btn-action btn-purple">&#10024; Skill</button>
+                <button id="btn-potion"  class="btn-action btn-green">&#9877; Potion</button>
+                <button id="btn-flee"    class="btn-action btn-olive">&#128099; Flee</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== SCREEN: SHOP ===== -->
+    <div id="screen-shop" class="screen hidden">
+        <div id="shop-container">
+            <div id="shop-header">
+                <img id="shop-img" src="RPGImages/shop1.webp" alt="Village Market">
+                <div id="shop-header-text">
+                    <h2>Village Market</h2>
+                    <p>Trade goods and prepare for your next adventure.</p>
+                    <p>Gold: <span id="shop-gold-display" class="gold-text">0</span></p>
+                </div>
+            </div>
+
+            <div id="shop-grid">
+                <section id="shop-weapons-section">
+                    <h3>Weapons</h3>
+                    <div id="shop-weapons"></div>
+                </section>
+                <section id="shop-armor-section">
+                    <h3>Armor</h3>
+                    <div id="shop-armor"></div>
+                </section>
+                <section id="shop-potions-section">
+                    <h3>Potions</h3>
+                    <button class="shop-item-btn" onclick="buyPotion()">
+                        Health Potion &mdash; 50 gold (Restores 50 HP)
+                    </button>
+                </section>
+            </div>
+
+            <div id="shop-footer">
+                <button class="btn-gold" onclick="leaveShop()">Leave Market</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
