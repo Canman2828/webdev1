@@ -1,0 +1,166 @@
+{
+  "playerClasses": [
+    { "class": "Warrior",
+      "health": 150,
+      "attackPower": 20,
+      "defense": 10,
+      "skill": "Power Strike" 
+    },
+    { "class": "Mage",
+      "health": 100,
+      "attackPower": 30,
+      "defense": 5,
+      "skill": "Fireball"
+    },
+    { "class": "Thief",
+      "health": 110, "attackPower": 18,
+      "defense": 8,
+      "skill": "Backstab"
+    },
+    { 
+      "class": "Archer",
+      "health": 120,
+      "attackPower": 22,
+      "defense": 6,
+      "skill": "Arrow Storm"
+    }
+  ],
+  "enemies": [
+    { 
+      "name": "Goblin",
+      "health": 50,
+      "attackPower": 10,
+      "defense": 2,
+      "xpReward": 20,
+      "goldReward": 15,
+      "image": "Goblin.webp"
+    },
+    { 
+      "name": "Troll",
+      "health": 100,
+      "attackPower": 15,
+      "defense": 5,
+      "xpReward": 35,
+      "goldReward": 25,
+      "image": "Troll.webp"
+    },
+
+    { 
+      "name": "Evil Soldier",
+      "health": 120,
+      "attackPower": 18,
+      "defense": 7,
+      "xpReward": 40,
+      "goldReward": 30,
+      "image": "evilSoldier.webp"
+    },
+    { 
+      "name": "Soldier",
+      "health": 90,
+      "attackPower": 14,
+      "defense": 6,
+      "xpReward": 30,
+      "goldReward": 22,
+      "image": "soldier.webp"
+    },
+    { 
+      "name": "Dragon",
+      "health": 200,
+      "attackPower": 30,
+      "defense": 12,
+      "xpReward": 100,
+      "goldReward": 80,
+      "image": "Dragon.webp"
+    }
+  ],
+  "weapons": [
+    { 
+      "name": "Iron Sword",
+      "power": 10,
+      "cost": 100,
+      "image": "Sword1.webp"
+    },
+    { 
+      "name": "Fire Staff",
+      "power": 15,
+      "cost": 150,
+      "image": "Staff1.webp"
+    },
+    { 
+      "name": "Dagger",
+      "power": 8,
+      "cost": 80,
+      "image": "Dagger1.webp"
+    },
+    { 
+      "name": "Longbow",
+      "power": 12,
+      "cost": 120,
+      "image": "Bow1.webp"
+    },
+    { 
+      "name": "Great Axe",
+      "power": 18, "cost": 200,
+      "image": "Axe.webp"
+    },
+    { 
+      "name": "Enchanted Staff",
+      "power": 22,
+      "cost": 280,
+      "image": "Staff3.webp"
+    }
+  ],
+  "armor": [
+    {
+      "name": "Leather Armor",
+      "defense": 5,
+      "cost": 100,
+      "image": "Thiefclothes1.webp"
+    },
+    { 
+      "name": "Chainmail",
+      "defense": 10,
+      "cost": 200,
+      "image": "Shield2.webp"
+    },
+    {
+      "name": "Mage Robes",
+      "defense": 7,
+      "cost": 150,
+      "image": "MageRobe.webp"
+    },
+    {
+      "name": "Plate Armor",
+      "defense": 15,
+      "cost": 350,
+      "image": "Shield3.webp"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Whispering Forest",
+      "description": "A dark, dense forest full of lurking goblins.",
+      "enemyTypes": ["Goblin", "Troll"]
+    },
+    {
+      "name": "Castle Ruins",
+      "description": "The haunted remains of an ancient battlefield.",
+      "enemyTypes": ["Evil Soldier", "Soldier"]
+    },
+    {
+      "name": "Mountain Cave",
+      "description": "A dragon's lair hidden deep within treacherous mountains.",
+      "enemyTypes": ["Dragon"]
+    },
+    {
+      "name": "Village Market",
+      "description": "A place to trade goods and rest.",
+      "enemyTypes": []
+    },
+    {
+      "name": "Enchanted Grove",
+      "description": "A mystical forest bathed in an eerie magical glow.",
+      "enemyTypes": ["Troll", "Evil Soldier"]
+    }
+  ]
+}
